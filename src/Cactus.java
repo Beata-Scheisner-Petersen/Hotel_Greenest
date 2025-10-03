@@ -4,8 +4,10 @@ public class Cactus extends Plants implements  InterfaceForAmountOfLiquid{
 
     public Cactus(String name, double height, String liquid) {
         super(name, height, liquid);
+        this.name = name;
     }
 
+    // Interface
     @Override
     public double amountOfLiquid() {
         return dailyLiquidAmount;

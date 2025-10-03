@@ -1,4 +1,4 @@
-public abstract class Plants {
+public abstract class Plants implements InterfaceForAmountOfLiquid {
     String name;
     double height;
     String liquid;
