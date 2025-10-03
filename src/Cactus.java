@@ -1,6 +1,6 @@
 // Subclass to the class Plants and implements the Interface InterfaceForAmountOfLiquid
 public class Cactus extends Plants implements  InterfaceForAmountOfLiquid{
-    // In Liter
+
     private double dailyLiquidAmount = 0.02;
 
     public Cactus(String name, double height, String liquid) {
