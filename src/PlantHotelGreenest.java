@@ -4,10 +4,10 @@ import java.util.List;
 
 public class PlantHotelGreenest {
     // Plants "name" = new "plant type" is Morphism and LiquidVarieties is Enum.
-    private Plants Igge = new Cactus("Igge", 0.2, LiquidVarieties.MINERAL_WATER.liquid);
-    private Plants Laura = new Palm("Laura", 5.0, LiquidVarieties.TAP_WATER.liquid);
-    private Plants Meatloaf = new CarnivorousPlants("Meatloaf", 0.7, LiquidVarieties.PROTEIN_DRINK.liquid);
-    private Plants Olof = new Palm("Olof", 1.0, LiquidVarieties.TAP_WATER.liquid);
+    private Plants Igge = new Cactus("Igge", 0.2, LiquidVarieties.MINERAL_WATER.getLiquid());
+    private Plants Laura = new Palm("Laura", 5.0, LiquidVarieties.TAP_WATER.getLiquid());
+    private Plants Meatloaf = new CarnivorousPlants("Meatloaf", 0.7, LiquidVarieties.PROTEIN_DRINK.getLiquid());
+    private Plants Olof = new Palm("Olof", 1.0, LiquidVarieties.TAP_WATER.getLiquid());
 
     // Using morphism to be able to put all plants in this list.
     private List<Plants> customers = new ArrayList<>();
@@ -25,21 +25,24 @@ public class PlantHotelGreenest {
      * User get asked if they will try again if it is error
      * If no error user get asked if they want to water another plant
      */
-    public void WateringFormula () {
+    public void WateringFormula() {
         boolean waterMore = true;
         int tryAgain;
 
         while (waterMore) {
             boolean isValidInput = false;
+            String plantToWater;
 
-            String plantToWater = JOptionPane.showInputDialog(null, "Which plant should get fluid?", "", JOptionPane.QUESTION_MESSAGE);
+            plantToWater = JOptionPane.showInputDialog(null, "Which plant should get fluid?", "", JOptionPane.QUESTION_MESSAGE);
+
             for (Plants p : customers) {
-                if (p.name.equals(plantToWater)){
-                    JOptionPane.showMessageDialog(null, String.format("%s should get %.2f Liter of %s", p.name, p.amountOfLiquid(), p.liquid), "Important",
+                if (p.getName().equals(plantToWater)) {
+                    JOptionPane.showMessageDialog(null, String.format("%s should get %.2f Liter of %s", p.getName(), p.amountOfLiquid(), p.getLiquid()), "Important",
                             JOptionPane.INFORMATION_MESSAGE);
                     isValidInput = true;
                 }
             }
+
             if (!isValidInput) {
                 tryAgain = JOptionPane.showConfirmDialog(null, (String.format("Error: Could not find %s in the system!\n" +
                                 "Do you want to try again?", plantToWater)), "Error",
