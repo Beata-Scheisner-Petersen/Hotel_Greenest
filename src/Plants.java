@@ -1,3 +1,4 @@
+// Superclass to the classes: Cactus, Palm and CarnivorousPlants
 public abstract class Plants implements InterfaceForAmountOfLiquid {
     String name;
     double height;

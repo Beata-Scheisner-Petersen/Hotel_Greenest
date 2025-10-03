@@ -1,3 +1,4 @@
+// Subclass to the class Plants.
 public class CarnivorousPlants extends Plants implements InterfaceForAmountOfLiquid {
     // In Liter
     double dailyLiquidAmount = 0.1;
