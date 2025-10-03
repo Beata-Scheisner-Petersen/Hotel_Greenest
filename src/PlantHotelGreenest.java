@@ -37,8 +37,8 @@ public class PlantHotelGreenest {
 
             for (Plants p : customers) {
                 if (p.getName().equals(plantToWater)) {
-                    JOptionPane.showMessageDialog(null, String.format("%s should get %.2f Liter of %s", p.getName(), p.amountOfLiquid(), p.getLiquid()), "Important",
-                            JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, String.format("%s should get %.2f Liter of %s", p.getName(), p.amountOfLiquid(), p.getLiquid()),
+                            "Important", JOptionPane.INFORMATION_MESSAGE);
                     isValidInput = true;
                 }
             }

@@ -1,4 +1,4 @@
-// Subclass to the class Plants.
+// Subclass to the class Plants and implements the Interface InterfaceForAmountOfLiquid
 public class Palm extends Plants implements InterfaceForAmountOfLiquid {
     // In Liter
     private double dailyLiquidAmount = 0.5;
